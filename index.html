@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/state-modifiers.css">
+  <script src="./js/main.js" type="module" defer></script>
+</head>
+
+<body>
+<div class="modal">
+  <form id="contact-details-form">
+    <a href="#" class="close-modal">x</a>
+    <h1 id="contact-details-form-header">Contact Form</h1>
+    <label for="contact-name">Name<span class="required-field">*</span></label>
+    <!-- <input type="text" name="contact-name" required> -->
+    <input type="text" name="contact-name">
+    <label for="contact-phone">Telephone<span class="required-field">*</span></label>
+    <!-- <input type="phone" name="contact-phone" required pattern="[0-9]{10}"> -->
+    <input type="text" name="contact-phone">
+    <label for="contact-addr">Address</label>
+    <input type="text" name="contact-addr">
+    <label for="contact-email">Email</label>
+    <!-- <input type="email" name="contact-email"> -->
+    <input type="text" name="contact-email">
+    <label for="contact-desc">Description</label>
+    <textarea name="contact-desc" rows="3"></textarea>
+    <input type="submit" value="Save">
+  </form>
+</div>
+
+<div class="modal">
+  <article id="contact-details-card">
+    <a href="#" class="close-modal">x</a>
+    <h1 id="contact-details-card-name-field">contact-name</h1>
+    <span id="contact-details-card-phone-label">Telephone</span>
+    <span id="contact-details-card-phone-field"></span>
+    <span id="contact-details-card-addr-label">Address</span>
+    <span id="contact-details-card-addr-field"></span>
+    <span id="contact-details-card-email-label">Email</span>
+    <span id="contact-details-card-email-field"></span>
+    <span id="contact-details-card-desc-label">Description</span>
+    <span id="contact-details-card-desc-field"></span>
+  </article>
+</div>
+
+<article id="app">
+  <header>
+    <h1>contacts app</h1>
+    <div class="actions-bar">
+      <input type="text" id="search-field">
+      <button type="button" class="app-btn" id="add-contact-btn">
+        <img src="./assets/icons/add.svg" alt="add contact" class="btn-icon">
+        <span>Add</span>
+      </button>
+      <button type="button" class="app-btn" id="delete-all-contacts-btn">
+        <img src="./assets/icons/delete-all.svg" alt="delete all contacts" class="btn-icon">
+        <span>Clear</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="contact-record-list"></main>
+
+  <footer>
+    <p>Tzoor & Zehava</p>
+  </footer>
+</article>
+</body>
+</html>

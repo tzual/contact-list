@@ -1,0 +1,72 @@
+/*#region no margin / padding*/
+/*they usually just get in the way*/
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+button,
+input,
+select {
+  margin: 0;
+}
+/*#endregion*/
+
+/*#region border-box*/
+/*set default box-sizing as border-box but let parent elements dictate otherwise*/
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+/*#endregion*/
+
+/*#region font-size*/
+/*set base assumption that user agent font size is set to 16px. set html font 
+  size to 1px and set body font size to 16rem which is actually 16 px. this 
+  results in using familiar px numbers with accessible rem units. for example,
+  let the user agent font-size be 24px, 16rem === 24px, so 1rem === 1.5px. 
+  now we can use rem where ever we want the size to adjust according to the font
+  size the user agent sets*/
+html {
+  font-size: 6.25%;
+}
+
+body {
+  font-size: 16rem;
+}
+/*#endregion*/
+
+/*#region default font values*/
+*,
+*::before,
+*::after {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: darkslategray;
+}
+/*#endregion*/
