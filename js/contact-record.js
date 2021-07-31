@@ -24,21 +24,6 @@ class ContactRecord extends HTMLElement {
     this.addEventListener('mouseout', this.unhighlight);
   }
 
-  static get observedAttributes() {
-    return ['name', 'phone'];
-  }
-
-  attributeChangedCallback(attr, oldValue, newValue) {
-    switch (attr) {
-      case 'name':
-        this.displayName.innerText = newValue;
-        break;
-      case 'phone':
-        this.displayTel.innerText = newValue;
-        break;
-    }
-  }
-
   disconnectedCallback() {
     this.displayName.removeEventListener('click', this.showFullDetails);
     this.displayTel.removeEventListener('click', this.showFullDetails);
@@ -121,51 +106,6 @@ class ContactRecord extends HTMLElement {
 
   unhighlight(event) {
     this.classList.remove('highlight');
-  }
-
-  get name() {
-    return this.getAttribute('name');
-  }
-
-  set name(newValue) {
-    this.setAttribute('name', newValue);
-    saveContactToLS(this);
-  }
-
-  get phone() {
-    return this.getAttribute('phone');
-  }
-
-  set phone(newValue) {
-    this.setAttribute('phone', newValue);
-    saveContactToLS(this);
-  }
-
-  get addr() {
-    return this.getAttribute('addr');
-  }
-
-  set addr(newValue) {
-    this.setAttribute('addr', newValue);
-    saveContactToLS(this);
-  }
-
-  get email() {
-    return this.getAttribute('email');
-  }
-
-  set email(newValue) {
-    this.setAttribute('email', newValue);
-    saveContactToLS(this);
-  }
-
-  get desc() {
-    return this.getAttribute('desc');
-  }
-
-  set desc(newValue) {
-    this.setAttribute('desc', newValue);
-    saveContactToLS(this);
   }
 }
 
