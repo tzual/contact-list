@@ -356,7 +356,7 @@ template {
 
 /******************************************************************************/
 
-/*#region(collapsed) reset*/
+/*#region(collapsed) common*/
 
 /*no margin / padding, they usually just get in the way*/
 html,
@@ -423,12 +423,6 @@ body {
   font-family: 'Oswald', sans-serif;
   color: darkslategray;
 }
-
-/*#endregion*/
-
-/******************************************************************************/
-
-/*#region(collapsed) common*/
 
 :root {
   --default-gap: 16px; /*we use px so that users with larger font-size wont lose screen real estate*/
