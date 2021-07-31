@@ -1,71 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet" />
-  <script src="./js/main.js" type="module"></script>
-</head>
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="./js/main.js" type="module"></script>
+  </head>
 
-<body>
-<div id="app">
-  <header>
-    <h1>contacts app</h1>
-    <div class="actions-bar">
-      <input type="text" id="search-field">
-      <button type="button" class="app-btn" id="add-contact-btn">
-        <img src="./assets/icons/add.svg" alt="add contact" class="btn-icon">
-        <span>Add</span>
-      </button>
-      <button type="button" class="app-btn" id="delete-all-contacts-btn">
-        <img src="./assets/icons/delete-all.svg" alt="delete all contacts" class="btn-icon">
-        <span>Clear</span>
-      </button>
+  <body>
+    <div id="app">
+      <header>
+        <h1>contacts app</h1>
+        <div class="actions-bar">
+          <input type="text" id="search-field" />
+          <button type="button" class="app-btn" id="add-contact-btn">
+            <img src="./assets/icons/add.svg" alt="add contact" class="btn-icon" />
+            <span>Add</span>
+          </button>
+          <button type="button" class="app-btn" id="delete-all-contacts-btn">
+            <img src="./assets/icons/delete-all.svg" alt="delete all contacts" class="btn-icon" />
+            <span>Clear</span>
+          </button>
+        </div>
+      </header>
+
+      <main id="contact-record-list"></main>
+
+      <footer>
+        <p>Tzoor & Zehava</p>
+      </footer>
     </div>
-  </header>
 
-  <main id="contact-record-list"></main>
+    <div class="modal">
+      <form id="contact-details-form">
+        <a href="#" class="close-modal">x</a>
+        <h2 id="contact-details-form-header">Contact Form</h2>
+        <label for="contact-details-form-name-field"
+          >Name<span class="required-field">*</span></label
+        >
+        <input id="contact-details-form-name-field" type="text" name="contact-name" required />
+        <label for="contact-details-form-phone-field"
+          >Telephone<span class="required-field">*</span></label
+        >
+        <input
+          id="contact-details-form-phone-field"
+          type="tel"
+          name="contact-phone"
+          required
+          pattern="[0-9]{10}"
+          placeholder="01234567890"
+          title="Please fill out this field with ten consecutive digits without symbols"
+        />
+        <label for="contact-details-form-addr-field">Address</label>
+        <input id="contact-details-form-addr-field" type="text" name="contact-addr" />
+        <label for="contact-details-form-email-field">Email</label>
+        <input id="contact-details-form-email-field" type="email" name="contact-email" />
+        <label for="contact-details-form-desc-field">Description</label>
+        <textarea id="contact-details-form-desc-field" name="contact-desc" rows="3"></textarea>
+        <input type="submit" value="Save" />
+      </form>
+    </div>
 
-  <footer>
-    <p>Tzoor & Zehava</p>
-  </footer>
-</div>
-
-<div class="modal">
-  <form id="contact-details-form">
-    <a href="#" class="close-modal">x</a>
-    <h2 id="contact-details-form-header">Contact Form</h2>
-    <label for="contact-details-form-name-field">Name<span class="required-field">*</span></label>
-    <input id="contact-details-form-name-field" type="text" name="contact-name" required>
-    <label for="contact-details-form-phone-field">Telephone<span class="required-field">*</span></label>
-    <input id="contact-details-form-phone-field" type="tel" name="contact-phone" required pattern="[0-9]{10}" placeholder="01234567890" title="Please fill out this field with ten consecutive digits without symbols">
-    <label for="contact-details-form-addr-field">Address</label>
-    <input id="contact-details-form-addr-field" type="text" name="contact-addr">
-    <label for="contact-details-form-email-field">Email</label>
-    <input id="contact-details-form-email-field" type="email" name="contact-email">
-    <label for="contact-details-form-desc-field">Description</label>
-    <textarea id="contact-details-form-desc-field" name="contact-desc" rows="3"></textarea>
-    <input type="submit" value="Save">
-  </form>
-</div>
-
-<div class="modal">
-  <article id="contact-details-card">
-    <a href="#" class="close-modal">x</a>
-    <h2 id="contact-details-card-name-field">contact-name</h2>
-    <span id="contact-details-card-phone-label">Telephone</span>
-    <span id="contact-details-card-phone-field"></span>
-    <span id="contact-details-card-addr-label">Address</span>
-    <span id="contact-details-card-addr-field"></span>
-    <span id="contact-details-card-email-label">Email</span>
-    <span id="contact-details-card-email-field"></span>
-    <span id="contact-details-card-desc-label">Description</span>
-    <span id="contact-details-card-desc-field"></span>
-  </article>
-</div>
-</body>
+    <div class="modal">
+      <article id="contact-details-card">
+        <a href="#" class="close-modal">x</a>
+        <h2 id="contact-details-card-name-field">contact-name</h2>
+        <span id="contact-details-card-phone-label">Telephone</span>
+        <span id="contact-details-card-phone-field"></span>
+        <span id="contact-details-card-addr-label">Address</span>
+        <span id="contact-details-card-addr-field"></span>
+        <span id="contact-details-card-email-label">Email</span>
+        <span id="contact-details-card-email-field"></span>
+        <span id="contact-details-card-desc-label">Description</span>
+        <span id="contact-details-card-desc-field"></span>
+      </article>
+    </div>
+  </body>
 </html>
