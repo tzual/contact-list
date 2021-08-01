@@ -497,7 +497,7 @@ footer p {
   gap: var(--default-gap);
 }
 
-#search-field {
+input[is='contact-record-search'] {
   width: 100%;
 }
 
