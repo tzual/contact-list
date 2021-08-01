@@ -619,7 +619,6 @@ contact-record button {
 }
 
 .highlight {
-  transition: background 0.25s;
   background: var(--main-color);
   outline: none;
 }
