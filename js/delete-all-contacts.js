@@ -5,6 +5,6 @@ export const initDeleteAllContactsBtn = () => {
       return;
     }
     localStorage.clear();
-    document.querySelector('#contact-record-list').innerHTML = '';
+    document.querySelector('contact-record-list').innerHTML = '';
   });
 };

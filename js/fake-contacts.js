@@ -1,3 +1,5 @@
+import { saveContactToLS } from './local-storage.js';
+
 const names = `Patty O\'Furniture
 Paddy O\'Furniture
 Olive Yew
@@ -907,7 +909,7 @@ const descriptions = [
   'Never put off till tomorrow what you can do the day after tomorrow.',
 ];
 
-export const getFakeContacts = () => {
+const getFakeContacts = () => {
   const contacts = [];
   for (let i = 0; i < 150; i++) {
     contacts.push({
@@ -920,3 +922,18 @@ export const getFakeContacts = () => {
   }
   return contacts;
 };
+
+const promptFakeContacts = () => {
+  const $contactRecordList = document.querySelector('contact-record-list');
+  if ($contactRecordList.ContactsList.length === 0) {
+    if (confirm('it seems your contacts list is empty, would you like to load fake contacts?')) {
+      const fakeContactsList = getFakeContacts();
+      for (const contact of fakeContactsList) {
+        saveContactToLS(contact);
+      }
+      $contactRecordList.refresh();
+    }
+  }
+};
+
+export { promptFakeContacts };

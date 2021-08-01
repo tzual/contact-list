@@ -560,7 +560,7 @@ footer p {
   transform: scale(1.1);
 }
 
-#contact-record-list {
+contact-record-list {
   display: grid;
   grid-auto-rows: max-content;
   gap: var(--default-gap);
@@ -582,7 +582,7 @@ contact-record {
 
 /*make scrolling of contact record list snap to top of first visible contact record*/
 
-#contact-record-list {
+contact-record-list {
   scroll-snap-type: y mandatory;
 }
 

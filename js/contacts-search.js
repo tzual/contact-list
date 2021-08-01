@@ -1,14 +1,14 @@
-import { getContactsFromLS, populateContactsList } from './contacts-list.js';
+import { getContactsFromLS } from './local-storage.js';
 
 export const initContactsSearch = () => {
-  const $contactsSearch = document.querySelector('#search-field');
-  $contactsSearch.addEventListener('keyup', (event) => {
-    const $contactReocordList = document.querySelector('#contact-record-list');
-    $contactReocordList.innerHTML = '';
-    const contactsList = getContactsFromLS();
-    const relevantContactsList = contactsList.filter((item) =>
-      item.name.toLowerCase().includes($contactsSearch.value.toLowerCase())
+  const $contactSearch = document.querySelector('#search-field');
+  $contactSearch.addEventListener('keyup', (event) => {
+    const contactList = getContactsFromLS();
+    const relevantContactsList = contactList.filter((item) =>
+      item.name.toLowerCase().includes($contactSearch.value.toLowerCase())
     );
-    populateContactsList(relevantContactsList);
+    const $contactRecordList = document.querySelector('contact-record-list');
+    $contactRecordList.clear();
+    $contactRecordList.populate(relevantContactsList);
   });
 };

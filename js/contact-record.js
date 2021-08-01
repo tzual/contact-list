@@ -1,4 +1,5 @@
 import { populateContactDetailsCard, showContactDetailsCard } from './contact-details-card.js';
+import { saveContactToLS } from './local-storage.js';
 import { html } from './html.js';
 
 class ContactRecord extends HTMLElement {
@@ -113,16 +114,4 @@ const defineContactRecord = () => {
   customElements.define('contact-record', ContactRecord);
 };
 
-const saveContactToLS = (contactDetails) => {
-  localStorage.setItem(
-    contactDetails.name,
-    JSON.stringify({
-      phone: contactDetails.phone,
-      addr: contactDetails.addr,
-      email: contactDetails.email,
-      desc: contactDetails.desc,
-    })
-  );
-};
-
-export { defineContactRecord, saveContactToLS };
+export { defineContactRecord };

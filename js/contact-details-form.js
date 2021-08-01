@@ -1,5 +1,4 @@
-import { clearContactsList, getContactsFromLS, populateContactsList } from './contacts-list.js';
-import { saveContactToLS } from './contact-record.js';
+import { saveContactToLS } from './local-storage.js';
 
 const initContactDetailsFormOpenListener = () => {
   const $addContactButton = document.querySelector('#add-contact-btn');
@@ -56,9 +55,8 @@ const initContactDetailsFormSubmitListener = () => {
     }
 
     saveContactToLS(contactDetails);
-    clearContactsList();
-    const contactsList = getContactsFromLS();
-    populateContactsList(contactsList);
+    const $contactRecordList = document.querySelector('contact-record-list');
+    $contactRecordList.refresh();
 
     $contactDetailsForm.parentElement.classList.remove('visible');
   });
