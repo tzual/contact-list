@@ -1,4 +1,4 @@
-import { ContactRecordList } from "./contact-record-list.js";
+import { ContactRecordList } from './contact-record-list.js';
 import { saveContactToLS } from './local-storage.js';
 import { html } from './html.js';
 
@@ -12,14 +12,25 @@ class ContactDetailsForm extends HTMLElement {
 
   connectedCallback() {
     this.append(html`
-      <form id="contact-details-form" >
+      <form id="contact-details-form">
         <a href="#" class="close-modal" close-modal>x</a>
         <h2 id="contact-details-form-header">Contact Form</h2>
-        <label for="contact-details-form-name-field">Name<span class="required-field">*</span></label>
+        <label for="contact-details-form-name-field"
+          >Name<span class="required-field">*</span></label
+        >
         <input id="contact-details-form-name-field" type="text" name="contact-name" required />
-        <label for="contact-details-form-phone-field">Telephone<span class="required-field">*</span></label>
-        <input id="contact-details-form-phone-field" type="tel" name="contact-phone" required pattern="[0-9]{10}"
-          placeholder="01234567890" title="Please fill out this field with ten consecutive digits without symbols" />
+        <label for="contact-details-form-phone-field"
+          >Telephone<span class="required-field">*</span></label
+        >
+        <input
+          id="contact-details-form-phone-field"
+          type="tel"
+          name="contact-phone"
+          required
+          pattern="[0-9]{10}"
+          placeholder="01234567890"
+          title="Please fill out this field with ten consecutive digits without symbols"
+        />
         <label for="contact-details-form-addr-field">Address</label>
         <input id="contact-details-form-addr-field" type="text" name="contact-addr" />
         <label for="contact-details-form-email-field">Email</label>
@@ -56,7 +67,7 @@ class ContactDetailsForm extends HTMLElement {
 
   submit(event) {
     event.preventDefault();
-  
+
     const contactDetails = {};
     for (const field of this.$form.elements) {
       if (field.name.includes('contact')) {

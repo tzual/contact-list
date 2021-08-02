@@ -6,4 +6,4 @@ export const html = (strings, ...values) => {
   const template = document.createElement('template');
   template.innerHTML = result;
   return template.content.cloneNode(true);
-}
+};
