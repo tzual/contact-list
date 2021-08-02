@@ -1,4 +1,4 @@
-import { populateContactDetailsCard, showContactDetailsCard } from './contact-details-card.js';
+import { ContactDetailsCard } from './contact-details-card.js';
 import { saveContactToLS } from './local-storage.js';
 import { html } from './html.js';
 
@@ -69,16 +69,15 @@ class ContactRecord extends HTMLElement {
   }
 
   showFullDetails(event) {
-    if (event.target.tagName.toLowerCase() == 'span') {
-      populateContactDetailsCard({
-        name: this.name,
-        phone: this.phone,
-        addr: this.addr,
-        email: this.email,
-        desc: this.desc,
-      });
-      showContactDetailsCard();
-    }
+    /** @type ContactDetailsCard */
+    const contactDetailsCard = document.querySelector('contact-details-card');
+    contactDetailsCard.show({
+      name: this.name,
+      phone: this.phone,
+      addr: this.addr,
+      email: this.email,
+      desc: this.desc,
+    });
   }
 
   showEditForm(event) {

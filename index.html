@@ -22,8 +22,6 @@
       <header>
         <h1>contacts app</h1>
         <div class="actions-bar">
-          <!-- <input type="text" id="search-field" /> -->
-
           <input is="contact-record-search" />
           <button type="button" class="app-btn" id="add-contact-btn">
             <img src="./assets/icons/add.svg" alt="add contact" class="btn-icon" />
@@ -41,6 +39,8 @@
       <footer>
         <p>Tzoor & Zehava</p>
       </footer>
+
+      <contact-details-card class="modal"></contact-details-card>
     </div>
 
     <div class="modal">
@@ -75,19 +75,6 @@
       </form>
     </div>
 
-    <div class="modal">
-      <article id="contact-details-card">
-        <a href="#" class="close-modal">x</a>
-        <h2 id="contact-details-card-name-field">contact-name</h2>
-        <span id="contact-details-card-phone-label">Telephone</span>
-        <span id="contact-details-card-phone-field"></span>
-        <span id="contact-details-card-addr-label">Address</span>
-        <span id="contact-details-card-addr-field"></span>
-        <span id="contact-details-card-email-label">Email</span>
-        <span id="contact-details-card-email-field"></span>
-        <span id="contact-details-card-desc-label">Description</span>
-        <span id="contact-details-card-desc-field"></span>
-      </article>
-    </div>
+    
   </body>
 </html>
