@@ -1,4 +1,4 @@
-class DeleteAllContactRecords extends HTMLButtonElement {
+class DeleteAllContactRecordsButton extends HTMLButtonElement {
   constructor() {
     super();
 
@@ -14,7 +14,7 @@ class DeleteAllContactRecords extends HTMLButtonElement {
 }
 
 const defineDeleteAllContactRecords = () => {
-  customElements.define('delete-all-contact-records', DeleteAllContactRecords, {
+  customElements.define('delete-all-contact-records-btn', DeleteAllContactRecordsButton, {
     extends: 'button',
   });
 };
