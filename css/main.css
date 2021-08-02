@@ -442,7 +442,7 @@ body {
   background: var(--main-color);
 }
 
-#app {
+contacts-app {
   height: 100vh;
   background: var(--sec-color);
   display: grid;

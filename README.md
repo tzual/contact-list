@@ -1,6 +1,6 @@
 # contact-list
 
-a local contact list web app (not yet) entirely based on web components.
+a local contact list web app entirely based on web components.
 
 features:
 - add a contact
