@@ -39,4 +39,4 @@ const defineContactRecordList = () => {
   customElements.define('contact-record-list', ContactRecordList);
 };
 
-export { defineContactRecordList };
+export { defineContactRecordList, ContactRecordList };

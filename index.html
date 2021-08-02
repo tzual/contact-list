@@ -23,7 +23,7 @@
         <h1>contacts app</h1>
         <div class="actions-bar">
           <input is="contact-record-search" />
-          <button type="button" class="app-btn" id="add-contact-btn">
+          <button type="button" class="app-btn" is="add-contact-record-btn">
             <img src="./assets/icons/add.svg" alt="add contact" class="btn-icon" />
             <span>Add</span>
           </button>
@@ -41,40 +41,7 @@
       </footer>
 
       <contact-details-card class="modal"></contact-details-card>
+      <contact-details-form class="modal"></contact-details-form>
     </div>
-
-    <div class="modal">
-      <form id="contact-details-form">
-        <a href="#" class="close-modal">x</a>
-        <h2 id="contact-details-form-header">Contact Form</h2>
-        <label for="contact-details-form-name-field">
-          Name
-          <span class="required-field">*</span>
-        </label>
-        <input id="contact-details-form-name-field" type="text" name="contact-name" required />
-        <label for="contact-details-form-phone-field">
-          Telephone
-          <span class="required-field">*</span>
-        </label>
-        <input
-          id="contact-details-form-phone-field"
-          type="tel"
-          name="contact-phone"
-          required
-          pattern="[0-9]{10}"
-          placeholder="01234567890"
-          title="Please fill out this field with ten consecutive digits without symbols"
-        />
-        <label for="contact-details-form-addr-field">Address</label>
-        <input id="contact-details-form-addr-field" type="text" name="contact-addr" />
-        <label for="contact-details-form-email-field">Email</label>
-        <input id="contact-details-form-email-field" type="email" name="contact-email" />
-        <label for="contact-details-form-desc-field">Description</label>
-        <textarea id="contact-details-form-desc-field" name="contact-desc" rows="3"></textarea>
-        <input type="submit" value="Save" />
-      </form>
-    </div>
-
-    
   </body>
 </html>

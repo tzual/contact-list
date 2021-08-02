@@ -91,6 +91,8 @@ class ContactRecord extends HTMLElement {
     }
     $contactDetailsForm.setAttribute('data-contact-name', this.name);
     $contactDetailsForm.parentElement.classList.add('visible');
+    const $contactNameField = $contactDetailsForm.querySelector('input[name="contact-name"]');
+    $contactNameField.focus();
   }
 
   confirmDelete(event) {
