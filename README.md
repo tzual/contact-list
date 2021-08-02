@@ -1,4 +1,4 @@
-# contact-list
+# Contact list app
 
 a local contact list web app entirely based on web components.
 

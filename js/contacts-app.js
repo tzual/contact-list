@@ -8,7 +8,7 @@ class ContactsApp extends HTMLElement {
     connectedCallback() {
       this.append(html`
         <header>
-            <h1>contacts app</h1>
+            <h1>Contact list app</h1>
             <div class="actions-bar">
                 <input is="contact-record-search" />
                 <button type="button" class="app-btn" is="add-contact-record-btn">
